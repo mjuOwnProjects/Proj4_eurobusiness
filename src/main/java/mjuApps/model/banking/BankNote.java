@@ -1,4 +1,4 @@
-package mjuApps.model;
+package mjuApps.model.banking;
 
 public class BankNote {
 

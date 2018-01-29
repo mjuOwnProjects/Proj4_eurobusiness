@@ -1,4 +1,4 @@
-package mjuApps.model;
+package mjuApps.model.banking;
 
 import java.util.ArrayList;
 import java.util.HashMap;

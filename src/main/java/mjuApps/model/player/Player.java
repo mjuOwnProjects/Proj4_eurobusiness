@@ -1,4 +1,4 @@
-package mjuApps.model;
+package mjuApps.model.player;
 
 import java.util.HashMap;
 import java.util.Map;

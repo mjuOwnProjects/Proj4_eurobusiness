@@ -1,39 +1,20 @@
 Eurobiznes. Implementacja gry w ramach zajęć z Java.
 1.	Gracz
 
-3.	Plansz do gry
-4.	Kostka do gry (dublet)
-5.	Nieruchomość
+
+
 6.	Akt własności
 7.	Pionek
 
-9.	Linia kolejowa
-10.	Wodociąg
-11.	Elektrownia
 12.	Bankier
 13.	Karta szansy
 14.	Państwo
 15.	Pole parking strzeżony
 16.	Pole darmowy parking
 17.	Zestaw domów
-18.	Dom
-19.	Hotel
+
 20.	Gra
 
-
-Banknot
-	String Nazwa;
-	int Nomniał;
-	String Waluta;
-
-Bank
-	List<Banknot> banknot1000;
-	List<Banknot> banknot500;
-	List<Banknot> banknot100;
-	List<Banknot> banknot50;
-	List<Banknot> banknot20;
-	List<Banknot> banknot10;
-	List<Banknot> banknot5;
 
 PoleAbstract
 	ENUM typPola;
@@ -47,13 +28,8 @@ PoleAbstract
 	PoleWiezienie extends PoleAbstract;
 	PoleIdzieszDoWiezienia extends PoleAbstract;
 	PoleWodociagi extends PoleAbstract;
+	PoleLiniaKolejowa extends PoleAbstract;
 	PoleMiasto extends PoleAbstract; (ENUM Kraj)
 	PoleElektrowniaAtomowa extends PoleAbstract;
 	PoleParkingStrzezony extends PoleAbstract;
 	PolePodatek extends PoleAbstract;
-	
-Plansza
-	//40 pol
-
-	
-	
