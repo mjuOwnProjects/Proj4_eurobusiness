@@ -2,17 +2,14 @@ package mjuApps.model.gameBoard;
 
 import mjuApps.model.player.Player;
 
-import java.util.Optional;
-
 public class BoardField {
 
-    private final BoardFIeldType fieldType;
+    private final BoardFieldType fieldType;
     private final int fieldNumber;
-    private Optional<Player> owner;
+    private Player owner;
 
-    public BoardField(BoardFIeldType fIeldType, int fieldNumber) {
-        this.fieldType = fIeldType;
+    public BoardField(BoardFieldType fieldType, int fieldNumber) {
+        this.fieldType = fieldType;
         this.fieldNumber = fieldNumber;
-        owner = Optional.empty();
     }
 }

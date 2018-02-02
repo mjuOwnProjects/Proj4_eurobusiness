@@ -1,6 +1,6 @@
 package mjuApps.model.gameBoard;
 
-public enum BoardFIeldType {
+public enum BoardFieldType {
     CITY,
     PRISON,
     CHANCE;

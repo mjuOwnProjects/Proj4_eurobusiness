@@ -18,10 +18,6 @@ public class Bank {
         this.bankDeposit.put(5,30);
     }
 
-    public Map<Integer, Integer> getBankDeposit() {
-        return bankDeposit;
-    }
-
     public Map<Integer, Integer> addToBankDeposit(Map<Integer, Integer> givenDeposit) {
         Map<Integer, Integer> deposit = givenDeposit;
 
@@ -46,5 +42,13 @@ public class Bank {
         }
 
         return deposit;
+    }
+
+    public Map<Integer, Integer> getBankDeposit() {
+        return bankDeposit;
+    }
+
+    public void setBankDeposit(Map<Integer, Integer> bankDeposit) {
+        this.bankDeposit = bankDeposit;
     }
 }
