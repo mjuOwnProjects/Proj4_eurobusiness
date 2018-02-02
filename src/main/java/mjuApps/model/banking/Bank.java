@@ -1,26 +1,50 @@
 package mjuApps.model.banking;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Bank {
 
-    private Map<Integer,Integer> bankNotes;
+    private Map<Integer,Integer> bankDeposit;
 
     public Bank() {
-        this.bankNotes = new HashMap<>();
-        this.bankNotes.put(1000,10);
-        this.bankNotes.put(500,30);
-        this.bankNotes.put(100,40);
-        this.bankNotes.put(50,30);
-        this.bankNotes.put(20,40);
-        this.bankNotes.put(10,50);
-        this.bankNotes.put(5,30);
+        this.bankDeposit = new HashMap<>();
+        this.bankDeposit.put(1000,10);
+        this.bankDeposit.put(500,30);
+        this.bankDeposit.put(100,40);
+        this.bankDeposit.put(50,30);
+        this.bankDeposit.put(20,40);
+        this.bankDeposit.put(10,50);
+        this.bankDeposit.put(5,30);
     }
 
-    public Map<Integer, Integer> getBankNotes() {
-        return bankNotes;
+    public Map<Integer, Integer> getBankDeposit() {
+        return bankDeposit;
+    }
+
+    public Map<Integer, Integer> addToBankDeposit(Map<Integer, Integer> givenDeposit) {
+        Map<Integer, Integer> deposit = givenDeposit;
+
+        for (Map.Entry<Integer,Integer> entry : deposit.entrySet()) {
+            int entryKey = entry.getKey();
+            int entryValue = entry.getValue();
+            int depositValue = this.bankDeposit.get(entryKey);
+            this.bankDeposit.put(entryKey,entryValue+depositValue);
+        }
+
+        return deposit;
+    }
+
+    public Map<Integer, Integer> deductBankDeposit(Map<Integer, Integer> depositToBeTaken) {
+        Map<Integer, Integer> deposit = depositToBeTaken;
+
+        for (Map.Entry<Integer, Integer> entry : deposit.entrySet()) {
+            int entryKey = entry.getKey();
+            int entryValue = entry.getValue();
+            int depositValue = this.bankDeposit.get(entryKey);
+            this.bankDeposit.put(entryKey,depositValue-entryValue);
+        }
+
+        return deposit;
     }
 }
