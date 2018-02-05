@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
-
 public class BankServiceTest {
 
     private Bank bank;
@@ -29,7 +27,7 @@ public class BankServiceTest {
     public void deductBankDepositByPlayer() {
         bank = bankService.deductBankDepositByPlayer(bank, player);
 
-        Map<Integer,Integer> deductedDeposit = bank.getBankDeposit();
+        Map<Integer,Integer> deductedDeposit = bank.getDeposit();
 
         Assert.assertEquals("1000$ x 9", Integer.valueOf(9),Integer.valueOf(deductedDeposit.get(1000)));
         Assert.assertEquals("500$ x 28",Integer.valueOf(28),Integer.valueOf(deductedDeposit.get(500)));
@@ -98,7 +96,7 @@ public class BankServiceTest {
         simulatedBankDeposit.put(10,10);
         simulatedBankDeposit.put(5,10);
 
-        bank.setBankDeposit(simulatedBankDeposit);
+        bank.setDeposit(simulatedBankDeposit);
 
         //when
         Map<Integer, Integer> resultMap = bankService.changeAmountToDeposit(givenAmount,bank).get();

@@ -1,5 +1,6 @@
 package mjuApps.model.banking;
 
+import mjuApps.abstractCommonTest.AbstractCommonTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,9 +8,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
-public class BankTest {
+public class BankTest extends AbstractCommonTest{
 
     Bank bank;
     Map<Integer, Integer> testDeposit;
@@ -22,9 +21,9 @@ public class BankTest {
 
     @Test
     public void addToBankDeposit() {
-        bank.addToBankDeposit(testDeposit);
+        bank.addToDeposit(testDeposit);
 
-        Map<Integer,Integer> deductedDeposit = bank.getBankDeposit();
+        Map<Integer,Integer> deductedDeposit = bank.getDeposit();
 
         Assert.assertEquals("1000$ x 9", Integer.valueOf(11),Integer.valueOf(deductedDeposit.get(1000)));
         Assert.assertEquals("500$ x 29",Integer.valueOf(31),Integer.valueOf(deductedDeposit.get(500)));
@@ -37,8 +36,8 @@ public class BankTest {
 
     @Test
     public void deductBankDeposit() {
-        bank.deductBankDeposit(testDeposit);
-        Map<Integer,Integer> deductedDeposit = bank.getBankDeposit();
+        bank.deductDeposit(testDeposit);
+        Map<Integer,Integer> deductedDeposit = bank.getDeposit();
 
         Assert.assertEquals("1000$ x 9", Integer.valueOf(9),Integer.valueOf(deductedDeposit.get(1000)));
         Assert.assertEquals("500$ x 29",Integer.valueOf(29),Integer.valueOf(deductedDeposit.get(500)));
@@ -49,17 +48,4 @@ public class BankTest {
         Assert.assertEquals("5$ x 29",Integer.valueOf(29),Integer.valueOf(deductedDeposit.get(5)));
     }
 
-    private Map<Integer,Integer> createTestDeposit() {
-        Map<Integer, Integer> testDeposit = new HashMap<>();
-
-        testDeposit.put(1000,1);
-        testDeposit.put(500,1);
-        testDeposit.put(100,1);
-        testDeposit.put(50,1);
-        testDeposit.put(20,1);
-        testDeposit.put(10,1);
-        testDeposit.put(5,1);
-
-        return testDeposit;
-    }
 }

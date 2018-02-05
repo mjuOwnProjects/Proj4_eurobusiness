@@ -8,18 +8,20 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.TreeMap;
 
-public class BankService {
+public class BankService implements Changeable {
 
     public Bank deductBankDepositByPlayer(Bank bankGiven, Player playerGiven) {
         Bank bank = bankGiven;
-        bank.deductBankDeposit(playerGiven.getPlayerDeposit());
+        bank.deductDeposit(playerGiven.getDeposit());
         return bank;
     }
 
-    public Optional<Map<Integer, Integer>> changeAmountToDeposit(int amount, Bank bank) {
 
+    @Override
+    public Optional<Map<Integer, Integer>> changeAmountToDeposit(int amount, Depositable objectWithDeposit) {
         Map<Integer, Integer> deposit = new HashMap<>();
-        Map<Integer, Integer> bankDeposit = new TreeMap<>(bank.getBankDeposit()).descendingMap();
+        Bank bank = (Bank) objectWithDeposit;
+        Map<Integer, Integer> bankDeposit = new TreeMap<>(bank.getDeposit()).descendingMap();
 
         int amountToChange = amount;
 
