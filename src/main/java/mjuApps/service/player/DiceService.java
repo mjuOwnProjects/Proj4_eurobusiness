@@ -20,8 +20,6 @@ public class DiceService {
     }
 
     public Optional<Integer> validateThrowsAndGetResult(int[] firstThrow, int[] secondThrow) {
-        Optional<Integer> possibleThrowResult = Optional.empty();
-
         if (checkIfDoublet(firstThrow)) {
             if (checkIfDoublet(secondThrow)) {
                 return Optional.empty();
