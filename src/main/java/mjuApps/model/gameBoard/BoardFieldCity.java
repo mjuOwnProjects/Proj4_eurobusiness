@@ -17,20 +17,18 @@ public class BoardFieldCity extends BoardFieldAbstract implements Buildable, Sel
     private Country country;
     private City city;
     private int fieldPrice;
-    private int housePrice;
-    private int hotelPrice;
+    private int buildingPrice;
     private Colour colour;
     private int housesQty;
     private int hotelQty;
     private Optional<Player> owner;
 
-    public BoardFieldCity(Country country, City city, int fieldPrice, int housePrice, int hotelPrice, Colour colour) {
+    public BoardFieldCity(Country country, City city, Colour colour) {
         super(FieldType.CITY);
         this.country = country;
         this.city = city;
-        this.fieldPrice = fieldPrice;
-        this.housePrice = housePrice;
-        this.hotelPrice = hotelPrice;
+        this.fieldPrice = city.getFieldPrice();
+        this.buildingPrice = country.getBuildingPrice();
         this.colour = colour;
     }
 
@@ -53,6 +51,15 @@ public class BoardFieldCity extends BoardFieldAbstract implements Buildable, Sel
         this.owner = Optional.of(player);
         return this;
     }
+
+    public int getHousesQty() {
+        return housesQty;
+    }
+
+    public int getHotelQty() {
+        return hotelQty;
+    }
+
 
     public int getFieldPrice() {
         return fieldPrice;

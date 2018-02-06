@@ -18,14 +18,31 @@ public class BoardFieldCityService {
         return fieldToBeSoldOptional;
     }
 
-    public Optional<Buildable> buildHouse(BoardFieldCity boardFieldCity) {
+    public Optional<BoardFieldCity> buildHouse(BoardFieldCity boardFieldCity) {
+
+        if (canAcceptHouse(boardFieldCity)) {
+            BoardFieldCity fieldCity = (BoardFieldCity) boardFieldCity.build(BuildingType.HOUSE);
+            return Optional.of(fieldCity);
+        }
 
         return Optional.empty();
     }
 
-    public boolean canBuildHouse(BoardFieldCity boardFieldCity) {
+    public Optional<BoardFieldCity> buildHotel(BoardFieldCity boardFieldCity) {
+        if (canAcceptHotel(boardFieldCity)) {
+            BoardFieldCity fieldCity = (BoardFieldCity) boardFieldCity.build(BuildingType.HOTEL);
+            return Optional.of(fieldCity);
+        }
 
-        return false;
+        return Optional.empty();
+    }
+
+    private boolean canAcceptHouse(BoardFieldCity boardFieldCity) {
+        return boardFieldCity.getHousesQty()<4 && boardFieldCity.getHotelQty()==0;
+    }
+
+    private boolean canAcceptHotel(BoardFieldCity boardFieldCity) {
+        return boardFieldCity.getHousesQty()==4 && boardFieldCity.getHotelQty()==0;
     }
 
 
