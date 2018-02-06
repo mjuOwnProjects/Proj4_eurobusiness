@@ -1,4 +1,4 @@
-package mjuApps.model.gameBoard;
+package mjuApps.model.gameBoard.fieldEnums;
 
 public enum Country {
 

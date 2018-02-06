@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Board {
 
-    private final List<BoardField> fields;
+    private final List<BoardFieldAbstract> fields;
 
-    public Board(List<BoardField> fields) {
+    public Board(List<BoardFieldAbstract> fields) {
         this.fields = fields;
     }
 }

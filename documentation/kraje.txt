@@ -1,0 +1,14 @@
+Anglia	Liverpool
+Anglia	Glasgow
+Anglia	Londyn
+Benelux	Rotterdam
+Benelux	Bruksela
+Benelux	Amsterdam
+Szwecja	Malmo
+Szwecja	Goteborg
+Szwecja	Sztokholm
+RFN	Frankfurt
+RFN	Kolonia
+RFN	Bonn
+Austria	Innsbruck
+Austria	Wiedeń

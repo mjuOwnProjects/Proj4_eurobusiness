@@ -1,5 +1,7 @@
 package mjuApps.model.gameBoard;
 
+import mjuApps.model.gameBoard.fieldEnums.City;
+
 public class Property {
     private final String name;
     private final City city;
