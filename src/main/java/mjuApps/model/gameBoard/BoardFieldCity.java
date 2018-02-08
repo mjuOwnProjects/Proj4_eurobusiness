@@ -30,6 +30,7 @@ public class BoardFieldCity extends BoardFieldAbstract implements Buildable, Sel
         this.fieldPrice = city.getFieldPrice();
         this.buildingPrice = country.getBuildingPrice();
         this.colour = colour;
+        this.owner = Optional.empty();
     }
 
     @Override

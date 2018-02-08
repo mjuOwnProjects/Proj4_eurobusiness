@@ -1,5 +1,9 @@
 package mjuApps.model.gameBoard.fieldEnums;
 
+/**
+ * Each enum represents one city, while int assigned to eat represents this City Price
+ */
+
 public enum City {
     AMSTERDAM (480),
     ATENY (120),

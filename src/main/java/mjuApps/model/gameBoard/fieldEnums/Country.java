@@ -1,5 +1,11 @@
 package mjuApps.model.gameBoard.fieldEnums;
 
+/**
+ * Each enum represents one Country, while int assigned to it
+ * represents default price of the building which can be built
+ * in cities of this country
+ */
+
 public enum Country {
 
     ANGLIA (200),
